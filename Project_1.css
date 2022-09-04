@@ -16,12 +16,37 @@ form {
         opacity: 1;
     }
 }
+#error-1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    visibility: hidden;
+}
+#error-2 {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    visibility: hidden;
+}
+#error-3 {
+    display: block;
+    visibility: hidden;
+}
+#thematic_break {
+    visibility: hidden;
+}
 #flame {
     position: fixed;
     top: 10%;
     width: 100%;
     text-align: center;
-    visibility: visible;
+    visibility: hidden;
 }
 #confirm {
     position: fixed;
