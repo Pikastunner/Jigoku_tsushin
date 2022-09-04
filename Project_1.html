@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+        <link rel="stylesheet" href="Project_1.css"/> 
+        <link rel="icon" type="image/x-icon" href="hell_girl.ico">
+        <title>Jigoku Tsushin</title>
+        <!--<meta http-equiv="refresh" content="10"> -->
+    </head>
+    <audio id="song-1" hidden="true" preload="auto">
+        <source src="song-1.mp3">
+        Your browser does not support the audio tag.
+     </audio>        
+    <body style="background-color: #00091f;">
+        <div id="flame">
+            <img src="new_flame.gif" alt="flame">
+        </div>
+        <div id="enma_ai">
+            <img rel="preload" src="enma_ai.jpg" alt="jigoku_shoujo">
+        </div>
+        <!--<h1 style="color:white;">Your grievance shall be avenged. </h1> -->
+        <form action="names.php" target="_blank" name="form" id="form" onsubmit="return check_input();">
+            <label for="description"><p style="color:white;" > Your grievance shall be avenged</label><br><br>
+            <input type="text" name="person" id="person">
+            <!--<input type="submit" value="Send">-->
+            <button type="submit"id="confirm" >Send</button>
+        </form>
+        <div id = "dialog-1" title = "dialog title 1" style="color:white; ">This is my dialog1</div>
+    </body>
+    <script>
+        function hide_flame() {
+            var modify = document.getElementById("flame");
+            setTimeout(function(){modify.style.visibility = "hidden";}, 1100);
+        }
+        hide_flame();
+    </script>
+    <script> 
+        function appear_form() {
+            var modify = document.getElementById("form");
+            setTimeout(function(){modify.style.visibility = "visible";}, 1100);
+        }
+        appear_form();
+    </script>
+    <script> 
+        function confirmation() {
+            if (!confirm("If you really want retribution, untie that red thread. Do you untie that red thread? Select OK if you are pulling the string or Cancel if you are returning the straw doll")) {
+                //return setTimeout(function() {return false;});
+                return false;
+            }
+            else {
+                return true;
+                //return setTimeout(function() {return true;});
+            }
+        }
+        function check_input2() {
+            var x = document.getElementById('person').value;
+            if (x == "" || x == null) {
+                alert("Name must be filled out");
+                document.getElementById('person').value="";
+                return false;
+            }
+            else if (/^[^\s]+\s[^\s]+$/.test(x) == false) {
+                alert("Not a name");
+                document.getElementById('person').value="";
+                return false;
+            }
+            else {
+                var startTime = Date.now();
+                //document.getElementById("enma_ai").style.visibility = "visible";
+                //document.getElementById("enma_ai").style.visibility = "visible";
+                setTimeout(() =>  document.getElementById("enma_ai").style.visibility = "visible", 100);
+                //$('#enma_ai').load(function() {check_input();});
+            }
+        }
+        function check_input() {           
+            var x = document.getElementById('person').value;
+            if (x == "" || x == null) {
+                alert("Name must be filled out");
+                document.getElementById('person').value="";
+                return false;
+            }
+            else if (/^[^\s]+\s[^\s]+$/.test(x) == false) {
+                alert("Not a name");
+                document.getElementById('person').value="";
+                return false;
+            }
+            else {
+
+                document.documentElement.style.cursor = "wait";
+                document.getElementById("form").style.cursor = "wait";
+                document.getElementById("confirm").style.cursor = "wait";
+                var script = "By untying the thread, you will enter into a convenant with me. The object of your vengeance will immediately be banished to hell. However, you will have to pay the price for it as well. Curses come home to roost. When you die, your soul will go to hell. You will never see heaven and your soul will wander for eternity in pain and agony.";
+                var startTime = Date.now();
+                document.documentElement.style.cursor = "auto";
+                document.getElementById("form").style.cursor = "auto";
+                document.getElementById("confirm").style.cursor = "auto";
+                //make_visible();
+                //$.dialog1();
+                //$("#dialog-1").dialog("open");
+                //make_hidden();    
+                introductions(script); 
+                var output = confirmation();     
+                return output;
+            }
+        }
+        function timer(time) {
+            var startTime = Date.now();
+            while ((Date.now() - startTime) < time) {
+                continue;
+            }
+        }
+        function introductions(script) {
+            var startTime = Date.now();
+            //document.getElementById("enma_ai").style.visibility = "visible";
+            timer(3000);
+            var x = document.getElementById("song-1"); 
+            x.play();
+            var startTime = Date.now();
+            //document.getElementById("enma_ai").style.visibility = "visible";
+            timer(800);
+            alert("I am Ai Enma");
+            timer(1000);
+            alert("You summoned me remember");
+            timer(1000);
+            alert("Take this");
+            timer(1000);
+            alert("By untying the thread, you will enter into a convenant with me.");
+            timer(1000);
+            alert("The object of your vengeance will immediately be banished to hell.");
+            timer(1000);
+            alert("However, you will have to pay the price for it as well.");
+            timer(1000);
+            alert("Curses come home to roost.");
+            timer(1000);
+            alert("When you die, your soul will go to hell.");
+            timer(1000);
+            alert("You will never see heaven and your soul will wander for eternity in pain and agony.");
+            var startTime = Date.now();
+            timer(3000);
+            alert("All that remains is for you to decide");
+            timer(2000);
+        }
+
+        $.dialog1 = function() {
+            $("#dialog-1").dialog({
+                autoOpen: false,
+                modal: true,
+                title: "If you really want retribution, untie that red thread.",
+                buttons: {
+                    "YES": function() {
+                        $(this).dialog("close");
+                        return true;
+                    },
+                    "NO": function() {
+                        $(this).dialog("close");
+                        return false;
+                    }
+                },
+            });
+            $("#dialog-1").dialog("open");
+        };
+        function display() {
+            var modify = document.getElementById("dialog-1");
+            modify.style.visibility = "visible";
+            $.dialog1();
+        }
+        function make_visible() {
+            setTimeout(() =>  document.getElementById("enma_ai").style.visibility = "visible", 3000);
+           // document.getElementById("enma_ai").style.visibility = "visible";
+        }
+        function make_hidden() {
+            document.getElementById("enma_ai").style.visibility = "hidden";
+        }
+
+                //alert("By untying the thread, you will enter into a convenant with me. The object of your vengeance will immediately be banished to hell. However, you will have to pay the price for it as well. Curses come home to roost. When you die, your soul will go to hell. You will never see heaven and your soul will wander for eternity in pain and agony. All that remains is for you to decide");
+        //});"))
+    </script>
+</html>
