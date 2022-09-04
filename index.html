@@ -21,7 +21,7 @@
             <img rel="preload" src="enma_ai.jpg" alt="jigoku_shoujo">
         </div>
         <!--<h1 style="color:white;">Your grievance shall be avenged. </h1> -->
-        <form target="_blank" name="form" id="form" onsubmit="return check_input();">
+        <form alert="action="javascript:void(0);"target="_blank" name="form" id="form" onsubmit="return check_input();">
             <label for="description"><p style="color:white;" > Your grievance shall be avenged</label><br><br>
             <input type="text" name="person" id="person">
             <!--<input type="submit" value="Send">-->
@@ -103,6 +103,7 @@
                 introductions(script); 
                 var output = confirmation();
                 if (output == true) {
+                    timer(1000);
                     alert("I consign this grievance to hell");
                 }
                 var x = document.getElementById("song-1"); 
