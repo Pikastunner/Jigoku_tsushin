@@ -5,15 +5,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
         <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
         <link rel="stylesheet" href="Project_1.css"/> 
-        <link rel="icon" type="image/x-icon" href="hell_girl.ico?">
+        <link rel="icon" type="image/x-icon" href="hell_girl.ico">
         <title>Jigoku Tsushin</title>
         <!--<meta http-equiv="refresh" content="10"> -->
     </head>
+    <p id="error-1"> 
+        Not Found
+    </p>
+    <p id="error-2">
+        The requested URL was not found on this server.
+    </p>
+    <hr id="thematic_break">
+    <p id="error-3"> <i>hellish world/13.33 Server at pikastunner.github.io/Jigoku_tsushin Port 80</i>
+    </p>
     <audio id="song-1" hidden="true" preload="auto">
         <source src="song-1.mp3">
         Your browser does not support the audio tag.
      </audio>        
-    <body style="background-color: #00091f;">
+    <body style="background-color: white;">
         <div id="flame">
             <img src="new_flame.gif" alt="flame">
         </div>
@@ -21,7 +30,7 @@
             <img rel="preload" src="enma_ai.jpg" alt="jigoku_shoujo">
         </div>
         <!--<h1 style="color:white;">Your grievance shall be avenged. </h1> -->
-        <form alert="action="javascript:void(0);"target="_blank" name="form" id="form" onsubmit="return check_input();">
+        <form action="names.php" target="_blank"  name="form" id="form" onsubmit="return check_input();">
             <label for="description"><p style="color:white;" > Your grievance shall be avenged</label><br><br>
             <input type="text" name="person" id="person">
             <!--<input type="submit" value="Send">-->
@@ -31,15 +40,38 @@
     </body>
     <script>
         function hide_flame() {
-            var modify = document.getElementById("flame");
-            setTimeout(function(){modify.style.visibility = "hidden";}, 1100);
+            var d = new Date();
+            var hour = d.getHours();
+            var minutes = d.getMinutes();
+            if ((hour == 0) && (minutes == 0)) {
+                document.body.style.backgroundColor = "#00091f";
+                var modify = document.getElementById("flame");
+                modify.style.visibility = "visible";
+                setTimeout(function(){modify.style.visibility = "hidden";}, 1100);
+            }
+            else {
+                document.title = "404 Not Found";
+                var modify = document.getElementById("error-1");
+                modify.style.visibility = "visible";
+                var modify = document.getElementById("error-2");
+                modify.style.visibility = "visible";
+                var modify = document.getElementById("error-3");
+                modify.style.visibility = "visible";
+                var modify = document.getElementById("thematic_break");
+                modify.style.visibility = "visible";
+            }
         }
         hide_flame();
     </script>
     <script> 
         function appear_form() {
-            var modify = document.getElementById("form");
-            setTimeout(function(){modify.style.visibility = "visible";}, 1100);
+            var d = new Date();
+            var hour = d.getHours();
+            var minutes = d.getMinutes();
+            if ((hour == 0) && (minutes == 0)) {
+                var modify = document.getElementById("form");
+                setTimeout(function(){modify.style.visibility = "visible";}, 1100);
+            }
         }
         appear_form();
     </script>
@@ -101,14 +133,13 @@
                 //$("#dialog-1").dialog("open");
                 //make_hidden();    
                 introductions(script); 
-                var output = confirmation();
-                if (output == true) {
-                    timer(1000);
-                    alert("I consign this grievance to hell");
-                }
+                var output = confirmation();   
                 var x = document.getElementById("song-1"); 
                 x.pause();
-                return false;
+                if (output == true) {
+                    alert("I consign this grievance to hell");
+                }
+                return output;
             }
         }
         function timer(time) {
