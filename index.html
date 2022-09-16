@@ -1,218 +1,322 @@
 <!DOCTYPE html>
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
-        <link rel="stylesheet" href="Project_1.css"/> 
-        <link rel="icon" type="image/x-icon" href="hell_girl.ico?">
-        <title>Hotline to Hell</title>
-        <!--<meta http-equiv="refresh" content="10"> -->
+    <head>
+        <link rel="stylesheet" href="Project_2.css"/> 
+        <link rel="icon" type="image/x-icon" href="2favicon.ico">
+        <title>My drawings</title>
     </head>
-    <p id="error-1"> 
-        Not Found
+    <body>
+    <h1 id="Title" styl style="color: white" >
+        My drawings
+    </h1>
+    <p class="information" style="color: white">
+        I am learning to draw by practicing on pictures based on animes
     </p>
-    <p id="error-2">
-        The requested URL was not found on this server.
+    <p class="information" style="color: white">
+        Animes that I draw from:
     </p>
-    <hr id="thematic_break">
-    <p id="error-3"> <i>hellish world/13.33 Server at pikastunner.github.io/Jigoku_tsushin Port 80</i>
+    <div style="text-align:center">
+        <a class="animetitle" style="color: white" href="#Anime-1">
+            <i>Boogiepop Phantom</i>
+        </a>
+    </div>
+    <div style="text-align:center"> 
+        <a class="animetitle" style="color: white" href="#Anime-2">
+        <i> Serial Experiment Lain</i>
+        </a>
+    </div>
+    <div style="text-align:center"> 
+        <a class="animetitle" style="color: white" href="#Anime-3">
+        <i> Beelzebub</i>
+        </a>
+    </div>
+    <div style="text-align:center"> 
+        <a class="animetitle" style="color: white" href="#Anime-4">
+        <i> The Melancholy of Haruhi Suzumiya</i>
+        </a>
+    </div>
+    <div style="text-align:center"> 
+        <a class="animetitle" style="color: white" href="#Anime-5">
+        <i> The Promised Neverland</i>
+        </a>
+    </div>
+    <div style="text-align:center"> 
+        <a class="animetitle" style="color: white" href="#Anime-6">
+        <i> Tokyo Revengers</i>
+        </a>
+    </div>
+    <p id="Anime-1" style="color: white">
+        Boogiepop Phantom
     </p>
-    <audio id="song-1" hidden="true" preload="auto">
-        <source src="song-1.mp3">
-        Your browser does not support the audio tag.
-     </audio>        
-    <body style="background-color: white;">
-        <div id="flame">
-            <img src="new_flame.gif" alt="flame">
+    <div class="row">
+        <div class="column">
+            <img id="oneimg-1" src="oikawa_masami.jpg" alt="oikawa_masami" style="width: 100%" onclick="update(this, 0);">
         </div>
-        <div id="enma_ai">
-            <img rel="preload" src="enma_ai.jpg" alt="jigoku_shoujo">
+        <div class="column">
+            <img id="oneimg-2" src="misuzu_arito.jpg" alt="misuzu_arito" style="width: 100%" onclick="update(this, 0);">
+        </div> 
+        <div class="column">
+            <img id="oneimg-3" src="saotome_masami.jpg" alt="saotome_masami" style="width: 100%" onclick="update(this, 0);">
         </div>
-        <!--<h1 style="color:white;">Your grievance shall be avenged. </h1> -->
-        <form action="names.php" target="_blank"  name="form" id="form" onsubmit="return check_input();">
-            <label for="description"><p style="color:white;" > Your grievance shall be avenged</label><br><br>
-            <input type="text" name="person" id="person">
-            <!--<input type="submit" value="Send">-->
-            <button type="submit"id="confirm" >Send</button>
-        </form>
-        <div id = "dialog-1" title = "dialog title 1" style="color:white; ">This is my dialog1</div>
-    </body>
+        <div class="column">
+            <img id="oneimg-4" src="jonouchi_hisashi.jpg" alt="jonouchi_hisashi" style="width: 100%" onclick="update(this, 0);">
+        </div>
+        <p class="left" style="color: white" onclick="shift_left('one', 0);">&#60;</p>
+        <p class="right" style="color: white" onclick="shift_right('one', 0);">&#62;</p>
+    </div>
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img class="enlarged" style="width: 50%; display: block;">
+        <div class="text" style="color: white"></div> 
+    </div>
+    <p id="Anime-2" style="color: white">
+        Serial Experiment Lain
+    </p>
+    <div class="row">
+        <div class="column">
+            <img id="twoimg-1" src="bad_lain_iwakura.jpg" alt="bad_lain_iwakura" style="width: 100%" onclick="update(this, 1);">
+        </div>
+        <div class="column">
+            <img id="twoimg-2" src="lain_iwakura_on_computer.jpg" alt="lain_iwakura_on_computer" style="width: 100%" onclick="update(this, 1);">
+        </div> 
+        <div class="column">
+            <img id="twoimg-3" src="lain_iwakura_shy.jpg" alt="lain_iwakura_shy" style="width: 100%" onclick="update(this, 1);">
+        </div>
+        <div class="column">
+            <img id="twoimg-4" src="lain_iwakura_worried.jpg" alt="lain_iwakura_worried" style="width: 100%" onclick="update(this, 1);">
+        </div>
+        <p class="left" style="color: white" onclick="shift_left('two', 1);">&#60;</p>
+        <p class="right" style="color: white" onclick="shift_right('two', 1);">&#62;</p>
+    </div>
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img class="enlarged" style="width: 50%; display: block;">
+        <div class="text" style="color: white"></div> 
+    </div>
+    <p id="Anime-3" style="color: white">
+        Beelzebub
+    </p>
+    <div class="row">
+        <div class="column">
+            <img id="threeimg-1" src="evil_oga_tatsumi.jpg" alt="evil_oga_tatsumi" style="width: 100%" onclick="update(this, 2);">
+        </div>
+        <div class="column">
+            <img id="threeimg-2" src="furuichi_takayuki.jpg" alt="furuichi_takayuki" style="width: 100%" onclick="update(this, 2);">
+        </div> 
+        <div class="column">
+            <img id="threeimg-3" src="hanazawa_yuka.jpg" alt="hanazawa_yuka" style="width: 100%" onclick="update(this, 2);">
+        </div>
+        <div class="column">
+            <img id="threeimg-4" src="himekawa_tatsuya.jpg" alt="himekawa_tatsuya" style="width: 100%" onclick="update(this, 2);">
+        </div>
+        <p class="left" style="color: white" onclick="shift_left('three', 2);">&#60;</p>
+        <p class="right" style="color: white" onclick="shift_right('three', 2);">&#62;</p>
+    </div>
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img class="enlarged" style="width: 50%; display: block;">
+        <div class="text" style="color: white"></div> 
+    </div>
+    <p id="Anime-4" style="color: white">
+        The Melancholy Of Haruhi Suzumiya
+    </p>
+    <div class="row">
+        <div class="column">
+            <img id="fourimg-1" src="koizumi_itsuki.jpg" alt="koizumi_itsuki" style="width: 100%" onclick="update(this, 3);">
+        </div>
+        <div class="column">
+            <img id="fourimg-2" src="kyon.jpg" alt="kyon" style="width: 100%" onclick="update(this, 3);">
+        </div> 
+        <div class="column">
+            <img id="fourimg-3" src="yuki_nagato.jpg" alt="yuki_nagato" style="width: 100%" onclick="update(this, 3);">
+        </div>
+        <p class="left" style="color: white" onclick="shift_left('four', 3);">&#60;</p>
+        <p class="right" style="color: white" onclick="shift_right('four', 3);">&#62;</p>
+    </div>
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img class="enlarged" style="width: 50%; display: block;">
+        <div class="text" style="color: white"></div> 
+    </div>
+    <p id="Anime-5" style="color: white">
+        The Promised Neverland
+    </p>
+    <div class="row">
+        <div class="column">
+            <img id="fiveimg-1" src="norman.jpg" alt="norman" style="width: 100%" onclick="update(this, 4);">
+        </div>
+        <p class="left" style="color: white" onclick="shift_left('five', 4);">&#60;</p>
+        <p class="right" style="color: white" onclick="shift_right('five', 4);">&#62;</p>
+    </div>
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img class="enlarged" style="width: 50%; display: block;">
+        <div class="text" style="color: white"></div> 
+    </div>
+    <p id="Anime-6" style="color: white">
+        Tokyo Revengers
+    </p>
+    <div class="row">
+        <div class="column">
+            <img id="siximg-1" src="takemichi_hanagaki.jpg" alt="takemichi_hanagaki" style="width: 100%" onclick="update(this, 5);">
+        </div>
+        <p class="left" style="color: white" onclick="shift_left('six', 5);">&#60;</p>
+        <p class="right" style="color: white" onclick="shift_right('six', 5);">&#62;</p>
+    </div>
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img class="enlarged" style="width: 50%; display: block;">
+        <div class="text" style="color: white"></div> 
+    </div>
     <script>
-        function hide_flame() {
-            var d = new Date();
-            var hour = d.getHours();
-            var minutes = d.getMinutes();
-            if (((hour == 0) && (minutes == 0))) {
-                document.body.style.backgroundColor = "#00091f";
-                var modify = document.getElementById("flame");
-                modify.style.visibility = "visible";
-                setTimeout(function(){modify.style.visibility = "hidden";}, 1100);
-            }
-            else {
-                document.title = "404 Not Found";
-                var modify = document.getElementById("error-1");
-                modify.style.visibility = "visible";
-                var modify = document.getElementById("error-2");
-                modify.style.visibility = "visible";
-                var modify = document.getElementById("error-3");
-                modify.style.visibility = "visible";
-                var modify = document.getElementById("thematic_break");
-                modify.style.visibility = "visible";
-            }
+        for (let i = 0; i < 6; i ++) {
+            document.getElementsByClassName("left")[i].innerHTML = "<<";
+            document.getElementsByClassName("right")[i].innerHTML = ">>";
+            document.getElementsByClassName("left")[i].style.visibility = "hidden";
         }
-        hide_flame();
+        document.getElementsByClassName("right")[3].style.visibility = "hidden";
+        document.getElementsByClassName("right")[4].style.visibility = "hidden";
+        document.getElementsByClassName("right")[5].style.visibility = "hidden";
     </script>
-    <script> 
-        function appear_form() {
-            var d = new Date();
-            var hour = d.getHours();
-            var minutes = d.getMinutes();
-            if (((hour == 0) && (minutes == 0))) {
-                var modify = document.getElementById("form");
-                setTimeout(function(){modify.style.visibility = "visible";}, 1100);
-            }
+    <script>
+        function update(image, ind) {
+            var expanded_img = document.getElementsByClassName("enlarged")[ind];
+            var the_text = document.getElementsByClassName("text")[ind];
+            document.getElementsByClassName("enlarged")[ind].style.margin = "0 auto";
+            expanded_img.src = image.src;
+            the_text.innerHTML = image.alt;
+            expanded_img.parentElement.style.display = "block";
         }
-        appear_form();
-    </script>
-    <script> 
-        function confirmation() {
-            if (!confirm("If you really want retribution, untie that red thread. Do you untie that red thread? Select OK if you are pulling the string or Cancel if you are returning the straw doll")) {
-                //return setTimeout(function() {return false;});
-                return false;
+        
+        function shift_right(row_num, ind) {
+            var left = "left";
+            var right = "right";
+            document.getElementsByClassName(left)[ind].style.visibility = "visible";
+            if (ind == 0) {
+                var all_elements = ["oikawa_masami.jpg", "misuzu_arito.jpg", "saotome_masami.jpg", "jonouchi_hisashi.jpg", "suganuma_yoji.jpg"];
+            }
+            else if (ind == 1) {
+                var all_elements = ["bad_lain_iwakura.jpg", "lain_iwakura_on_computer.jpg", "lain_iwakura_shy.jpg", "lain_iwakura_worried.jpg", "fixated_lain_iwakura.jpg", "mirror_lain_iwakura.jpg", "wired_lain.jpg"];
+            }
+            else if (ind == 2) {
+                var all_elements = ["evil_oga_tatsumi.jpg", "furuichi_takayuki.jpg", "hanazawa_yuka.jpg", "himekawa_tatsuya.jpg", "kanzaki_hajime.jpg", "kunieda_aoi.jpg", "natsume_shintarou.jpg", "serious_furuichi_takayuki.jpg", "shiroyama_takeshi.jpg", "smiling_oga_tatsumi.jpg", "tanimura _chiaki.jpg", "toujou_hidetora.jpg", "umemiya_kaoru.jpg"];
+            }
+            else if (ind == 3) {
+                var all_elements = ["koizumi_itsuki.jpg", "kyon.jpg", "yuki_nagato.jpg"];
+            }
+            else if (ind == 4) {
+                var all_elements = ["norman.jpg"];
             }
             else {
-                return true;
-                //return setTimeout(function() {return true;});
+                var all_elements = ["takemichi_hanagaki.jpg"];
             }
-        }
-        function check_input2() {
-            var x = document.getElementById('person').value;
-            if (x == "" || x == null) {
-                alert("Name must be filled out");
-                document.getElementById('person').value="";
-                return false;
-            }
-            else if (/^[^\s]+\s[^\s]+$/.test(x) == false) {
-                alert("Not a name");
-                document.getElementById('person').value="";
-                return false;
-            }
-            else {
-                var startTime = Date.now();
-                //document.getElementById("enma_ai").style.visibility = "visible";
-                //document.getElementById("enma_ai").style.visibility = "visible";
-                setTimeout(() =>  document.getElementById("enma_ai").style.visibility = "visible", 100);
-                //$('#enma_ai').load(function() {check_input();});
-            }
-        }
-        function check_input() {           
-            var x = document.getElementById('person').value;
-            if (x == "" || x == null) {
-                alert("Name must be filled out");
-                document.getElementById('person').value="";
-                return false;
-            }
-            else if (/^[^\s]+\s[^\s]+$/.test(x) == false) {
-                alert("Not a name");
-                document.getElementById('person').value="";
-                return false;
-            }
-            else {
-
-                document.documentElement.style.cursor = "wait";
-                document.getElementById("form").style.cursor = "wait";
-                document.getElementById("confirm").style.cursor = "wait";
-                var script = "By untying the thread, you will enter into a convenant with me. The object of your vengeance will immediately be banished to hell. However, you will have to pay the price for it as well. Curses come home to roost. When you die, your soul will go to hell. You will never see heaven and your soul will wander for eternity in pain and agony.";
-                var startTime = Date.now();
-                document.documentElement.style.cursor = "auto";
-                document.getElementById("form").style.cursor = "auto";
-                document.getElementById("confirm").style.cursor = "auto";
-                //make_visible();
-                //$.dialog1();
-                //$("#dialog-1").dialog("open");
-                //make_hidden();    
-                introductions(script); 
-                var output = confirmation();   
-                var x = document.getElementById("song-1"); 
-                x.pause();
-                if (output == true) {
-                    alert("I consign this grievance to hell");
+            var img_1 = String(row_num) + "img-1";
+            var img_2 = String(row_num) + "img-2";
+            var img_3 = String(row_num) + "img-3";
+            var img_4 = String(row_num) + "img-4";
+            var first_img = document.getElementById(img_1).alt;
+            const regex = new RegExp(first_img);
+            const list_len = all_elements.length;
+            var index = 0;
+            for (let i = 0; i < (list_len); i ++) {
+                if (regex.test(all_elements[i])) {
+                    index = i;
+                    break;
                 }
-                return output;
+            }
+            if (first_img != all_elements[list_len - 4].slice(0, -4)) {
+                document.getElementById(img_1).className += 'hidden';
+                setTimeout(function() {document.getElementById(img_1).className = document.getElementById(img_1).className.replace('hidden', '');}, 3500);
+
+                document.getElementById(img_1).src = document.getElementById(img_2).src;
+                document.getElementById(img_1).alt = document.getElementById(img_2).alt;
+
+                document.getElementById(img_2).className += 'hidden';
+                setTimeout(function() {document.getElementById(img_2).className = document.getElementById(img_2).className.replace('hidden', '');}, 3500);
+
+                document.getElementById(img_2).src = document.getElementById(img_3).src;
+                document.getElementById(img_2).alt = document.getElementById(img_3).alt;
+
+                document.getElementById(img_3).className += 'hidden';
+                setTimeout(function() {document.getElementById(img_3).className = document.getElementById(img_3).className.replace('hidden', '');}, 3500);
+
+                document.getElementById(img_3).src = document.getElementById(img_4).src;
+                document.getElementById(img_3).alt = document.getElementById(img_4).alt;
+
+                document.getElementById(img_4).className += 'hidden';
+                setTimeout(function() {document.getElementById(img_4).className = document.getElementById(img_4).className.replace('hidden', '');}, 3500);
+
+                document.getElementById(img_4).src = all_elements[index + 4];
+                document.getElementById(img_4).alt = all_elements[index + 4].slice(0, -4);
+            }
+            var first_img = document.getElementById(img_1).alt;
+            if (first_img == all_elements[list_len - 4].slice(0, -4)) {
+                document.getElementsByClassName(right)[ind].style.visibility = "hidden";
             }
         }
-        function timer(time) {
-            var startTime = Date.now();
-            while ((Date.now() - startTime) < time) {
-                continue;
+
+        function shift_left(row_num, ind) {
+            var left = "left";
+            var right = "right";
+            document.getElementsByClassName(right)[ind].style.visibility = "visible";
+            var img_1 = String(row_num) + "img-1";
+            var img_2 = String(row_num) + "img-2";
+            var img_3 = String(row_num) + "img-3";
+            var img_4 = String(row_num) + "img-4";
+            var first_img = document.getElementById(img_1).alt;
+            if (ind == 0) {
+                var all_elements = ["oikawa_masami.jpg", "misuzu_arito.jpg", "saotome_masami.jpg", "jonouchi_hisashi.jpg", "suganuma_yoji.jpg"];
+            }
+            else if (ind == 1) {
+                var all_elements = ["bad_lain_iwakura.jpg", "lain_iwakura_on_computer.jpg", "lain_iwakura_shy.jpg", "lain_iwakura_worried.jpg", "fixated_lain_iwakura.jpg", "wired_lain.jpg"];
+            }
+            else if (ind == 2) {
+                var all_elements = ["evil_oga_tatsumi.jpg", "furuichi_takayuki.jpg", "hanazawa_yuka.jpg", "himekawa_tatsuya.jpg", "kanzaki_hajime.jpg", "kunieda_aoi.jpg", "natsume_shintarou.jpg", "serious_furuichi_takayuki.jpg", "shiroyama_takeshi.jpg", "smiling_oga_tatsumi.jpg", "tanimura _chiaki.jpg", "toujou_hidetora.jpg", "umemiya_kaoru.jpg"];
+            }
+            else {
+                var all_elements = ["koizumi_itsuki.jpg", "kyon.jpg", "yuki_nagato.jpg"];
+            }            
+            const regex = new RegExp(first_img);
+            const list_len = all_elements.length;
+            var index = 0;
+            for (let i = 0; i < (list_len); i ++) {
+                if (regex.test(all_elements[i])) {
+                    index = i;
+                    break;
+                }
+            }
+            if (first_img != all_elements[0].slice(0, -4)) {
+                document.getElementById(img_4).className += 'hidden';
+                setTimeout(function() {document.getElementById(img_4).className = document.getElementById(img_4).className.replace('hidden', '');}, 3500);
+
+                document.getElementById(img_4).src = document.getElementById(img_3).src;
+                document.getElementById(img_4).alt = document.getElementById(img_3).alt;
+
+                
+                document.getElementById(img_3).className += 'hidden';
+                setTimeout(function() {document.getElementById(img_3).className = document.getElementById(img_3).className.replace('hidden', '');}, 3500);
+
+                document.getElementById(img_3).src = document.getElementById(img_2).src;
+                document.getElementById(img_3).alt = document.getElementById(img_2).alt;
+                
+                document.getElementById(img_2).className += 'hidden';
+                setTimeout(function() {document.getElementById(img_2).className = document.getElementById(img_2).className.replace('hidden', '');}, 3500);
+
+                document.getElementById(img_2).src = document.getElementById(img_1).src;
+                document.getElementById(img_2).alt = document.getElementById(img_1).alt;
+                
+                document.getElementById(img_1).className += 'hidden';
+                setTimeout(function() {document.getElementById(img_1).className = document.getElementById(img_1).className.replace('hidden', '');}, 3500);
+
+                document.getElementById(img_1).src = all_elements[index - 1];
+                document.getElementById(img_1).alt = all_elements[index - 1].slice(0, -4);
+            }
+            var first_img = document.getElementById(img_1).alt;
+            if (first_img == all_elements[0].slice(0, -4)) {
+                document.getElementsByClassName(left)[ind].style.visibility = "hidden";
             }
         }
-        function introductions(script) {
-            var startTime = Date.now();
-            //document.getElementById("enma_ai").style.visibility = "visible";
-            timer(3000);
-            var x = document.getElementById("song-1"); 
-            x.play();
-            var startTime = Date.now();
-            //document.getElementById("enma_ai").style.visibility = "visible";
-            timer(800);
-            alert("I am Ai Enma");
-            timer(1000);
-            alert("You summoned me remember");
-            timer(1000);
-            alert("Take this");
-            timer(1000);
-            alert("By untying the thread, you will enter into a convenant with me.");
-            timer(1000);
-            alert("The object of your vengeance will immediately be banished to hell.");
-            timer(1000);
-            alert("However, you will have to pay the price for it as well.");
-            timer(1000);
-            alert("Curses come home to roost.");
-            timer(1000);
-            alert("When you die, your soul will go to hell.");
-            timer(1000);
-            alert("You will never see heaven and your soul will wander for eternity in pain and agony.");
-            var startTime = Date.now();
-            timer(3000);
-            alert("All that remains is for you to decide");
-            timer(2000);
-        }
-
-        $.dialog1 = function() {
-            $("#dialog-1").dialog({
-                autoOpen: false,
-                modal: true,
-                title: "If you really want retribution, untie that red thread.",
-                buttons: {
-                    "YES": function() {
-                        $(this).dialog("close");
-                        return true;
-                    },
-                    "NO": function() {
-                        $(this).dialog("close");
-                        return false;
-                    }
-                },
-            });
-            $("#dialog-1").dialog("open");
-        };
-        function display() {
-            var modify = document.getElementById("dialog-1");
-            modify.style.visibility = "visible";
-            $.dialog1();
-        }
-        function make_visible() {
-            setTimeout(() =>  document.getElementById("enma_ai").style.visibility = "visible", 3000);
-           // document.getElementById("enma_ai").style.visibility = "visible";
-        }
-        function make_hidden() {
-            document.getElementById("enma_ai").style.visibility = "hidden";
-        }
-
-                //alert("By untying the thread, you will enter into a convenant with me. The object of your vengeance will immediately be banished to hell. However, you will have to pay the price for it as well. Curses come home to roost. When you die, your soul will go to hell. You will never see heaven and your soul will wander for eternity in pain and agony. All that remains is for you to decide");
-        //});"))
     </script>
-</html>
+    </body>
+</html> 
