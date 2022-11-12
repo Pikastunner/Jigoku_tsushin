@@ -48,7 +48,7 @@ form {
     top: 10%;
     width: 100%;
     text-align: center;
-    visibility: hidden; /*change back maybe*/
+    visibility: hidden; 
 }
 #person {
     position: relative;
