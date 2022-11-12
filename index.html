@@ -43,12 +43,12 @@
             var d = new Date();
             var hour = d.getHours();
             var minutes = d.getMinutes();
-            //if ((hour == 0) && (minutes == 0)) {
+            if ((hour == 0) && (minutes == 0)) {
                 document.body.style.backgroundColor = "#00091f";
                 var modify = document.getElementById("flame");
                 modify.style.visibility = "visible";
                 setTimeout(function(){modify.style.visibility = "hidden";}, 1100);
-           /* }
+            }
             else {
                 document.title = "404 Not Found";
                 var modify = document.getElementById("error-1");
@@ -59,7 +59,7 @@
                 modify.style.visibility = "visible";
                 var modify = document.getElementById("thematic_break");
                 modify.style.visibility = "visible";
-            }*/
+            }
         }
         hide_flame();
     </script>
@@ -68,10 +68,10 @@
             var d = new Date();
             var hour = d.getHours();
             var minutes = d.getMinutes();
-            //if ((hour == 0) && (minutes == 0)) {
+            if ((hour == 0) && (minutes == 0)) {
                 var modify = document.getElementById("form");
                 setTimeout(function(){modify.style.visibility = "visible";}, 1100);
-            //}
+            }
         }
         appear_form();
     </script>
