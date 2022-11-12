@@ -1,10 +1,12 @@
 form {
     position: fixed;
     top: 20%;
+    right: 0.01%;
     width: 100%;
     visibility: hidden;
     text-align: center;   
     animation: fadein ease 4s;
+    text-align: center;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -46,12 +48,17 @@ form {
     top: 10%;
     width: 100%;
     text-align: center;
-    visibility: hidden;
+    visibility: visible; /*change back maybe*/
+}
+#person {
+    position: relative;
+    left: 25px;
 }
 #confirm {
-    position: fixed;
-    top: 30%;
-    right: 48.35%;
+    position: relative;
+    top: 45px;
+    right: 92px;
+    /*right: 48.35%;*/
     text-align: center;
 }
 #dialog-1 {
