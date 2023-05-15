@@ -48,7 +48,7 @@
                 var modify = document.getElementById("flame");
                 modify.style.visibility = "visible";
                 setTimeout(function(){modify.style.visibility = "hidden";}, 1100);
-            }
+            }/*
             else {
                 document.title = "404 Not Found";
                 var modify = document.getElementById("error-1");
@@ -59,7 +59,11 @@
                 modify.style.visibility = "visible";
                 var modify = document.getElementById("thematic_break");
                 modify.style.visibility = "visible";
-            }
+            }*/
+            document.body.style.backgroundColor = "#00091f";
+            var modify = document.getElementById("flame");
+            modify.style.visibility = "visible";
+            setTimeout(function(){modify.style.visibility = "hidden";}, 1100);
         }
         hide_flame();
     </script>
@@ -72,6 +76,8 @@
                 var modify = document.getElementById("form");
                 setTimeout(function(){modify.style.visibility = "visible";}, 1100);
             }
+            var modify = document.getElementById("form");
+            setTimeout(function(){modify.style.visibility = "visible";}, 1100);
         }
         appear_form();
     </script>
